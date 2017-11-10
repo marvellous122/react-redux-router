@@ -9,8 +9,13 @@ import About from '../about';
 const App = () => (
   <div className="App">
     <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
+      <div className="container">
+        <a className="logo" href="#">giant<strong>SEA</strong></a>
+        <nav className="navbar pull-right">
+          <Link to="/">Home</Link>
+          <Link to="/about-us">About</Link>
+        </nav>
+      </div>
     </header>
 
     <main>

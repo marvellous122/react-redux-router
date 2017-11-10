@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.1.0",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -17,5 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6"
   }
 }
