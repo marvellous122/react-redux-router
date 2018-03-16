@@ -1,8 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-export default () => (
+const Profile = props => (
   <div>
-    <h1>About Us</h1>
-    <p>Hello Medium!</p>
+    <div className="header">
+      <div className="back-btn" onClick={() => props.changePage()}>Back</div>
+      <h1>Profile</h1>
+    </div>
+    <h2>{(props.userInfo && props.userInfo.name) ? props.userInfo.name : ""}</h2>
+    <p>{(props.userInfo && props.userInfo.location) ? props.userInfo.location : ""}</p>
   </div>
 )
+
+const mapStateToProps = state => ({
+  userInfo: state.user.userProfile
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changePage: () => push('/')
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
